@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <tittle>Register Account</tittle>
+   <style>
+
+    *{
+        box-sizing:border-box;
+    }
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        background-color: #f4f4f4;
+        padding :20px;
+
+    }
+    .container{
+        max-width:400px;
+        margin:0 auto;
+        background-color:white;
+        padding:20px;
+        border:1px solid #ddd;
+        border-radius: 10px;
+        
+    }
+    h2{text-align: center;
+       color: #333;
+
+    
+    }
+    form{
+        display:flex;flex-direction: column;
+    }
+    lable{
+        margin-top: 10px;
+        font-weight: bold;
+        color:#333;
+
+    }
+    input , select , button{
+        padding:10px;
+        margin-top:5px;
+        font-size:14px;
+        border-radius: 5px;
+        border:1px solid #ccc;
+    }
+    button{
+        margin-top:15px;
+        background-color: #5cb85c;
+        color: white;
+        cursor:pointer;
+
+    }
+    button:hover{
+        background-color: #4cae4c;
+
+    }
+    button[type="reset"]
+    {
+        background-color: #d9534f;
+    }
+    button[type="reset"]:hover{
+        background-color:#c9302c;
+
+    }
+    .error-message{
+        color: red;
+        font-size: 12px;
+        margin-top: 2px;
+        display:none;
+    }
+    
+
+
+
+
+
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register Account</h2>
+        <from id="registrationform" action="#" method="post" onsubmit="return validateform()">
+            <lable for="name">Full Name</lable>
+            <input type="text" id="name" name="name" placeholder="Enter Full Name">
+            <span id="nameError" class="error-message">Password must be at least 4 characters </span>
+
+            <lable for="Password">Password:</lable>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            <span id="passwordError" class="error-message">password do not match</span>
+            
+            <lable for="confirmpassword">confirm password:</lable>
+            <input type="password" id="password" name="password" placeholder="confirm password">
+            <span id="confirmpasswordError" class="error-message">password do not match</span>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email">
+            <span id="emailError" class="error-message">Invalid email format</span>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="0XXX-XXX-XXX">
+            <span id="phoneError" class="error-message">Invalid phone number</span>
+
+            <label for="zipCode">Zip Code:</label>
+            <input type="text" id="zipCode" name="zipCode" placeholder="Enter zip code">
+            <span id="zipCodeError" class="error-message">Invalid Zip Code</span>
+            
+            <label for="cardType">Card Type:</label>
+            <select id="cardType" name="cardType">
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+            </select>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444">
+            <span id="cardNumberError" class="error-message">Invalid card number format</span>
+
+
+            <label for="expDate">Expiration Date:</label>
+            <input type="text" id="expDate" name="expDate" placeholder="YYYY-MM-DD">
+            <span id="expDateError" class="error-message">Invalid date format</span>
+
+            <button type="submit">Register</button>
+            <button type="reset">Clear Form</button>
+
+        </from>
+ 
+
+    </div>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Full Name Validation
+            const name = document.getElementById("name").value;
+            if (name.length < 4) {
+                document.getElementById("nameError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("nameError").style.display = "none";
+            }
+
+            // Password Validation
+            const password = document.getElementById("password").value;
+            if (password.length < 4) {
+                document.getElementById("passwordError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+            }
+
+            // Confirm Password Validation
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("confirmPasswordError").style.display = "none";
+            }
+
+            // Email Validation
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+            }
+
+            // Phone Number Validation
+            const phone = document.getElementById("phone").value;
+            const phonePattern = /^0\d{3}-\d{3}-\d{3}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById("phoneError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("phoneError").style.display = "none";
+            }
+
+            // Zip Code Validation
+            const zipCode = document.getElementById("zipCode").value;
+            const zipCodePattern = /^\d{5}(-\d{4})?$/;
+            if (!zipCodePattern.test(zipCode)) {
+                document.getElementById("zipCodeError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("zipCodeError").style.display = "none";
+            }
+
+            // Card Number Validation
+            const cardNumber = document.getElementById("cardNumber").value;
+            const cardPattern = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+            if (!cardPattern.test(cardNumber)) {
+                document.getElementById("cardNumberError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("cardNumberError").style.display = "none";
+            }
+
+            // Expiration Date Validation
+            const expDate = document.getElementById("expDate").value;
+            const datePattern = /^\d{4}-\d{2}-\d{2}$/;
+            if (!datePattern.test(expDate)) {
+                document.getElementById("expDateError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("expDateError").style.display = "none";
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>

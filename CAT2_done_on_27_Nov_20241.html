@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4fb;
+        }
+
+        .weather-container {
+            width: 350px;
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .search-box {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+            font-size: 1em;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background-color: #a77ae2;
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+        }
+
+        .weather-info h1 {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        .weather-info p {
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: left;
+        }
+
+        .weather-info .details {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: left;
+        }
+
+        .weather-info .details span {
+            color: #e17a77;
+        }
+
+        .temperature {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Aligns to the right */
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .temperature img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .footer a {
+            color: #a77ae2;
+            text-decoration: none;
+        }
+    </style>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    h1{
+        text-align: center;
+    }
+    label{
+        size-adjust: 100px;
+    }
+    form{
+        text-indent: 26px;
+        line-height: 50px;
+    }
+</style>
+<body>
+    <h1>Register Account</h1>
+     <form >
+        <label for="name"> Full Name: </label>
+        <input type="name" name="name" id="name" />
+        <br/>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" />
+        <br/>
+        <label for="password"> Confirm Password: </label>
+        <input type="password" name="password" id="password" />
+        <br/>
+        <label for="email"> Email: </label>
+        <input type="email" name="email" id="email" />
+        <br/>
+        <label for="number"> Phone Number: </label>
+        <input type="number" name="phone number" id="number" />
+        <br/>
+        <label for="number"> Zip Code: </label>
+        <input type="number" name="number" id="number" />
+        <br/>
+        <label for="card">Card Type: </label>
+        <select name="card" id="card" required>
+            <option value="">--Select Card--</option>
+            <option value="Visa">Visa</option>
+            <option value="Paypal">Paypal</option>
+            <option value="Credit">Credit</option>
+        </select>
+        <br/>
+        <label for="number"> Card Number: </label>
+        <input type="number" name="number" id="number" />
+        <br/>
+        <label for="number"> Expiration Date: </label>
+        <input type="date" name="formatDate" id="formatDate" />
+        <br/>
+        <input type="button" value="Register" />
+        <input type="reset" value="Clear Form" />
+        <br/>
+    </form>
+        </body>
+</html>
+<body>
+    <div class="weather-container">
+        <div class="search-box">
+            <input type="text" placeholder="Enter a city..">
+            <button>Search</button>
+        </div>
+        <div class="weather-info">
+            <h1>Paris</h1>
+            <p>Tuesday 07:45, moderate rain</p>
+            <div class="details">
+                Humidity: <span>87%</span>, Wind: <span>7.2km/h</span>
+            </div>
+            <div class="temperature">
+                <img src="https://img.icons8.com/emoji/48/000000/sun-emoji.png" alt="sun icon">
+                24°C
+            </div>
+        </div>
+        <div class="footer">
+            This project was coded by <a href="#">Timothy Kirimi</a> and is <a href="#">on GitHub</a> and <a href="#">hosted on Netlify</a>
+        </div>
+    </div>
+</body>
+</html>
